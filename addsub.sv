@@ -20,5 +20,6 @@ module addsub #(parameter dw=8)		 // dw = data width
     else if(add_sub == 1)
       result = dataa + datab;
   end  
+  // adding a comment for testing
 
 endmodule
