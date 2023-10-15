@@ -12,13 +12,12 @@ module mux3 #(parameter WIDTH = 8)
 //  1     0    d2
 //  1     1	   d2
   always_comb begin
-    if(s[1] == 0)
-      if(s[0] == 0)
-        y[7:0] = d0[7:0]
-      else if(s[0] == 1)
-        y[7:0] = d1[7:0]
-    else if(s[1] == 1)
-      y[7:0] = d2[7:0]
+    case(s):
+      0: y[7:0] = d0[7:0];
+      1: y[7:0] = d1[7:0];
+      2: y[7:0] = d2[7:0];
+      3: y[7:0] = d2[7:0];
+    endcase
       
   end
 endmodule
