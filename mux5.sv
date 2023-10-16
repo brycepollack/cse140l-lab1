@@ -20,15 +20,24 @@ module mux5 (input        d0, d1, d2, d3, d4,
     //  5	   0
     //  6	   0
     //  7	   0	    s = 3'b111
+    //    case(s)
+    //        0: y = d0;
+    //        1: y = d1;
+    //        2: y = d2;
+    //        3: y = d3;
+    //        4: y = d4;
+    //        5: y = 0;
+    //        6: y = 0;
+    //        7: y = 0;
+    //    endcase
         case(s)
-            0: y = d0;
-            1: y = d1;
-            2: y = d2;
-            3: y = d3;
-            4: y = d4;
-            5: y = 0;
-            6: y = 0;
-            7: y = 0;
+            3'b000: y=d0;
+            3'b001: y=d1;
+            3'b010: y=d2;
+            3'b011: y=d3;
+            3'b100: y=d4;
+            default: y=1'b0;
         endcase
+    
     end
 endmodule

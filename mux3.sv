@@ -13,10 +13,15 @@ module mux3 #(parameter WIDTH = 8)
 //  1     1	   d2
   always_comb begin
     case(s)
-      0: y[7:0] = d0[7:0];
-      1: y[7:0] = d1[7:0];
-      2: y[7:0] = d2[7:0];
-      3: y[7:0] = d2[7:0];
+      // 0: y[7:0] = d0[7:0];
+      // 1: y[7:0] = d1[7:0];
+      // 2: y[7:0] = d2[7:0];
+      // 3: y[7:0] = d2[7:0];
+      2'b00: y = d0;
+      2'b01: y = d1;
+      2'b10: y = d2;
+      2'b11: y = d2;
+      default: y = '0;
     endcase
       
   end

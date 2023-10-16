@@ -11,10 +11,19 @@ module mux2 #(parameter WIDTH = 8)
 // 0   d0	y[7:0] = d0[7:0]
 // 1   d1	y[7:0] = d1[7:0]
   always_comb begin
-    if(s == 0)
-      y[7:0] = d0[7:0];
-    else if(s == 1)
-      y[7:0] = d1[7:0];
+    // if(s == 0)
+    //   y[7:0] = d0[7:0];
+    // else if(s == 1)
+    //   y[7:0] = d1[7:0];
+    // case(s)
+    //   1'b0: y = d0;
+    //   1'b1: y = d1;
+    //   default: y = '0;
+    // endcase
+    if (s == 1)
+      y = d1;
+    else
+      y = d0;
       
   end
 
