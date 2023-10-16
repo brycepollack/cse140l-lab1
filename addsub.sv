@@ -15,10 +15,10 @@ module addsub #(parameter dw=8)		 // dw = data width
 //1             dataa + datab;						
 //0             dataa - datab; 
   always_comb begin
-    if(add_sub == 0)
-      result = dataa - datab;
-    else if(add_sub == 1)
+    if(add_sub)
       result = dataa + datab;
+    else
+      result = dataa - datab;
   end  
   // adding a comment for testing
 

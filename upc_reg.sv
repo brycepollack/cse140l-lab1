@@ -16,12 +16,20 @@ module upcreg(
 //	   1		       0         0
 //	   0		       1		  upc_next
 //	   0	         0        upc+1
-    if(reset == 1)
-      upc <= 0;
-    else if(reset == 0)
-      if(load_incr == 1)
-        upc <= upc_next;
-      else if(load_incr == 0)
-        upc <= upc + 1;
+    // if(reset == 1)
+    //   upc <= 0;
+    // else if(reset == 0)
+    //   if(load_incr == 1)
+    //     upc <= upc_next;
+    //   else if(load_incr == 0)
+    //     upc <= upc + 1;
+    if (reset)
+      upc <= 5'b00000;
+    else if (load_incr)
+      upc <= upc_next;
+    else if (load_incr == 0)
+      upc <= upc + 1;
+    else
+      upc <= 5'b00000; // edge case, should not happen
   end
 endmodule    

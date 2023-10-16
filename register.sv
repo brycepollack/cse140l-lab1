@@ -18,10 +18,9 @@ module register # (parameter N = 8)
 //     0       0     hold  (no change in output)
 //     0       1      in   (update output)
     if(clear == 1)
-      out <= 0;
-    else if(clear == 0)
-      if(load == 1)
-        out <= in;
+      out <= '0;
+    else if(load == 1)
+      out <= in;
 	
 // Aside: What would be the impact of leaving posedge clear out of 
 //  the sensitivity list? 
