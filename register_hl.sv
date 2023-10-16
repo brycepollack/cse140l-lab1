@@ -25,7 +25,7 @@ module register_hl # (parameter N = 16)
     if(clear == 1)
       out[N-1:N/2] <= 0;
       out[N/2-1:0] <= 0;
-    else if(clear == 0) begin
+    if(clear == 0) begin
       if(loadh == 1)
         out[N-1:N/2] <= inh;
       if(loadl == 1)
