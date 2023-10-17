@@ -17,9 +17,9 @@ module register # (parameter N = 8)
 //     1       1      0
 //     0       0     hold  (no change in output)
 //     0       1      in   (update output)
-    if(clear == 1)
+    if(clear)
       out <= '0;
-    else if(load == 1)
+    else if(load)
       out <= in;
 	
 // Aside: What would be the impact of leaving posedge clear out of 

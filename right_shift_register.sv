@@ -19,9 +19,13 @@ module right_shift_register #(parameter WIDTH = 16)(
 //		1		0	     load and arithmetic right shift
     if(enable)
       if(mode == 0)
-        out <= in>>>1;
+        // out <= in>>>1;
+        out <= {in[WIDTH-1],in[WIDTH-1:1]};
       else if(mode == 1)
-        out <= in>>1;
+        // out <= in>>1;
+        out <= {1'b0,in[WIDTH-1:1]};
+      else
+        out <= '0;
   end
 
 /* logical right shift fills in 0s from the left

@@ -69,7 +69,7 @@ module robertsonstest;
     multiplicand = -4;
     rslt_disp;
 // now try a comprehensive test -- nested FOR loops
-    $stop;   // comment out for longer test
+    // $stop;   // comment out for longer test
     for(multiplier = -64; multiplier<64; multiplier++) begin
 	  for(multiplicand = -64; multiplicand<64; multiplicand++) 
         rslt_disp2;
